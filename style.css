@@ -36,6 +36,31 @@ h1 {
   background-color: black;
   
 }
+.quiz {
+  padding: 10px;
+  max-width: 100%;
+  max-height: 100%;
+  margin: 0px auto;
+  color: rgb(248, 241, 241);
+  user-select: none;
+  background-color: black;
+  
+}
+
+.answers {
+  font-size: 25px;
+  text-align: center;
+  color: rgb(250, 248, 248);
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.questions {
+  font-size: 35px;
+  font-weight: bolder;
+  text-align: center;
+  color: rgb(252, 5, 5);
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
 
 .timer {
   height: 100%;
@@ -60,6 +85,20 @@ h1 {
     border-radius: 100%;
     font-size: 3em;
     background-color: rgb(7, 7, 7);
+    border: none;
+    color: #fdfdfd;
+    cursor: cell;
+    text-align: center;
+  }
+  .quizbutton {
+    height: 50px;
+    width: 50px;
+    margin: 5px;
+    margin-top: 0px;
+    margin-left: 10px;
+    border-radius: 100%;
+    font-size: 1em;
+    background-color: crimson;
     border: none;
     color: #fdfdfd;
     cursor: cell;

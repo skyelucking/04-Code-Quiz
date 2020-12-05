@@ -13,8 +13,8 @@
   </head>
 
       <body>
-    <header>
-        </header>
+    <header></header>
+        
 
     <!-- Pseudo Code -->
     <!-- - Page Loads with code instructions and a 'start quiz button' 
@@ -32,24 +32,57 @@
 
 
     <!-- Create the Start Quiz Button Which Kick's Off the Timer -->
-    <div class="container-md">
+    <div class="container" id="#quizIntro">
       <row class="row">
-        <col class="col-lg-12 text-center"><div class="jumbotron" >
+        <col class="col text-center"><div class="jumbotron" >
           <h1 class="display-8 text-center">CAGE MATCH - CODING CHALLENGE!</h1>
           <p id="lead">It'll be 75 seconds of pure JavaScript Coding Blitz - with a 10 second penalty on your timer for every wrong answer!  Not only that - but you mustn't get distracted by ol' cagey Nick Cage trying to break your concentraion. As time grows short so does Nick Cage's apparent sanity! Stay focused! Stay strong! Stay Cage free!</p></div>
-        </col>
-        </row>
-        <div class="container-md">
+          
+<div class="quiz container text-center" >
+  <div class="container text-center">
+  <div class="row container" style="background-color: rgb(0, 0, 0); min-width: 100%;">
+    <p class="questions container" id="#quizQuestion">Where the question goes</p>
+      </row>
+        <div class="row" style="min-width: 100%;">
+          <p class="answers container" id="#quizQuestion"> <button class="quizbutton" aria-label="quizbutton" id="quizA1">
+            A </button>Where the answer goes</p>
+      </row>
+      
+    </div>
+    <div class="row" style="min-width: 100%;">
+      <p class="answers container" id="#quizQuestion"> <button class="quizbutton" aria-label="quizbutton" id="quizA1">
+        B </button>Where the answer goes</p>
+  </row>
+  
+</div>
+<div class="row" style="min-width: 100%;">
+  <p class="answers container" id="#quizQuestion"> <button class="quizbutton" aria-label="quizbutton" id="quizA1">
+    C </button>Where the answer goes</p>
+</row>
+
+</div>
+<div class="row" style="min-width: 100%;">
+  <p class="answers container" id="#quizQuestion"> <button class="quizbutton" aria-label="quizbutton" id="quizA1">
+    D </button>Where the answer goes</p>
+</row>
+
+</div>
+        
+        <div class="container-md" style="max-width:100% ;">
         <row class="row"
-        <col class="col-lg-8 text-left" style="background-color: crimson;"><div class="button btn btn-danger" style="font-weight: bolder; text-align: center; background-color: crimson;"> Poke the Eye To Begin! <br>
+        <col class="col-lg-4 text-left" style="background-color: crimson;"><div class="button btn btn-danger" style="font-weight: bolder; text-align: center; background-color: crimson;"> Poke the Eye To Begin! <br>
         <button aria-label="play" id="play">
           <i class="fas fa-eye"></i>
         </button></div>
-        <div class="col-lg-3 text-left" style="background-color:crimson;"></div>
-        <div class="col-lg-1 text-left" style="background-color:black;"><div class="time"><div id="seconds"style="font-weight: bolder; text-align: center;"></div></col>
+        <div class="col-lg-4 text-left" style="background-color:crimson;"></div>
+        <div class="col-lg-4 text-left" style="background-color:black;"><div class="time"><div id="seconds"style="font-weight: bolder; text-align: center;"></div></col>
       </div>
         </div>
 </div>
+
+
+
+
 
 <script src="./script.js"></script>
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
