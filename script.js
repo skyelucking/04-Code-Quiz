@@ -5,6 +5,9 @@ var totalSeconds = 0;
 var secondsElapsed = 0;
 var interval;
 
+// Turning on and Off Buttons
+var leadText = document.querySelector("#lead")
+
 
 playButton.addEventListener("click", startTimer);
 
@@ -40,7 +43,6 @@ function getFormattedSeconds() {
   }
   return formattedSeconds;
    }
-
  
 
 
