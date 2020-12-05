@@ -9,7 +9,7 @@ var workMinutesInput = document.querySelector("#work-minutes");
 var restMinutesInput = document.querySelector("#rest-minutes");
 var inputs = document.querySelector(".inputs")
 
-var totalSeconds = 0;
+var totalSeconds = 60;
 var secondsElapsed = 0;
 var status = "Working";
 var interval;

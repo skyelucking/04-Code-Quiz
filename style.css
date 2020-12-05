@@ -1,0 +1,38 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  font-size: 14px;
+  background-color: #fdfdfd;
+  font-family: "Josefin Sans", sans-serif;
+}
+
+header {
+  text-align: center;
+  color: tomato;
+  font-family: "Amatic SC", cursive;
+}
+
+h1 {
+  font-size: 3.5em;
+}
+
+#seconds {
+    font-size: 4em;
+    float: left;
+  }
+  button {
+    height: 60px;
+    width: 60px;
+    margin: 5px;
+    margin-top: 10px;
+    border-radius: 50%;
+    font-size: 1.5em;
+    background-color: tomato;
+    border: none;
+    color: #fdfdfd;
+    cursor: pointer;
+  }
