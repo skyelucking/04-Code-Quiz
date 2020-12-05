@@ -6,11 +6,11 @@ var secondsElapsed = 0;
 var interval;
 
 // Quiz Body Elements
-var quizQuestionText = "test";
-var answerText1 = document.querySelector("#quizA1");
-var answerText2 = document.querySelector("#quizA2");
-var answerText3 = document.querySelector("#quizA3");
-var answerText4 = document.querySelector("#quizA4");
+var quizQuestionText = document.querySelector("#quizQuestion");
+var ansText1 = document.querySelector("#quizA1");
+var ansText2 = document.querySelector("#quizA2");
+var ansText3 = document.querySelector("#quizA3");
+var ansText4 = document.querySelector("#quizA4");
 var leadText = document.querySelector("#lead");
 var quizIntroText = document.querySelector("#quizIntro");
 
