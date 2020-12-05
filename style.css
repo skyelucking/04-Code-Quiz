@@ -37,7 +37,7 @@ h1 {
   
 }
 .quiz {
-  padding: 10px;
+  padding: 0px;
   max-width: 100%;
   max-height: 100%;
   margin: 0px auto;
@@ -62,20 +62,20 @@ h1 {
   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 
-.timer {
+.time {
   height: 100%;
   width: 100%;
-  margin: 10px;
+  margin: 0px;
+  color: red;
   background-color: rgb(255, 255, 255);
-  /* border-radius: 50%; */
-  position: relative;
+   position: relative;
 }
 
 
 #seconds {
-    font-size: 4em;
-    float: none;
-    color: white;
+    font-size: 6em;
+    float: inherit;
+    color: crimson;
   }
   button {
     height: 90px;
