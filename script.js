@@ -1,3 +1,20 @@
+// Quiz Body Elements
+var siteButton = document.getElementById("#site");
+var quizQuestionText = document.getElementById("#quizQuestion");
+var ansText1 = document.getElementById("#quizA1");
+var ansText2 = document.getElementById("#quizA2");
+var ansText3 = document.getElementById("#quizA3");
+var ansText4 = document.getElementById("#quizA4");
+var leadText = document.getElementById("#lead");
+var quizIntroText = document.getElementById("#quizIntro");
+
+
+// Quiz Scorekeeping Mechanism
+var correctAns = ["JS", "December 4, 1995", "JS", "Oracle", "jQuery", "This is the correct answer. You're welcome!" ]
+var quizScore = 0;
+var quizName = "Quiz T. Aker";
+var highScores = [];
+
 // Set Quiz Question Data
 var quizDataList = [
   {
@@ -20,8 +37,9 @@ var quizDataList = [
     quest3AnsB: "JS",
     quest3AnsC: "avaj",
     quest3AnsD: "beanjuice"
-  },{
-    question4El: ""JavaScript" is a trademark of...",
+  },
+  {
+    question4El: "THe software is a trademark of...",
     quest4AnsA: "Google ",
     quest4AnsB: "Apple",
     quest4AnsC: "Microsoft",
@@ -43,6 +61,34 @@ var quizDataList = [
   },
 ];
 
+// Render Quiz Question Data
+function renderSite(quizDataList) {
+  console.log(quizDataList)
+  console.log(i)
+  // quizQuestionText = quizDataList.element[i].children[0];
+  // ansText1.textContent = quizDataList.element[i].children[1];
+  // ansText2.textContent = quizDataList.element[i].children[2];
+  // ansText3.textContent = quizDataList.element[i].children[3];
+  // ansText4.textContent = quizDataList.element[i].children[4];
+}
+  for (var i = 0; i < quizDataList.length; i++) {
+    renderSite(quizDataList[i]);
+}
+
+// If then for game play
+
+function playGame() {
+}
+
+// If then for keeping and saving score to High Score Page
+function getScore() {
+
+}
+
+// Function to End Game
+function endGame(){
+
+}
 
 // Set Time-Keeping Variables, Button, Display
 var playButton = document.querySelector("#play");
@@ -51,17 +97,9 @@ var totalSeconds = 0;
 var secondsElapsed = 0;
 var interval;
 
-// Quiz Body Elements
-var quizQuestionText = document.querySelector("#quizQuestion");
-var ansText1 = document.querySelector("#quizA1");
-var ansText2 = document.querySelector("#quizA2");
-var ansText3 = document.querySelector("#quizA3");
-var ansText4 = document.querySelector("#quizA4");
-var leadText = document.querySelector("#lead");
-var quizIntroText = document.querySelector("#quizIntro");
-
 //Timer and Count-Down
 playButton.addEventListener("click", startTimer);
+// playButton.addEventListener("click", renderSite);
 
 function startTimer() {
   setTime();
@@ -76,6 +114,12 @@ function startTimer() {
     }, 1000);
     }
 }
+
+renderSite(); { 
+
+  console.log("Did this work?")
+}
+
 function setTime() {
   totalSeconds = 4;
 }
@@ -97,6 +141,4 @@ function getFormattedSeconds() {
   return formattedSeconds;
 }
 
-//Setting Up the Quiz Loop
 
-var quizQuestionText = quiz1[question];
