@@ -34,7 +34,7 @@ quizbutton.addEventListener("click", function(event) {
   } else if (user.highscore === "") {
     displayMessage("error", "highscore cannot be blank");
   } else {
-    displayMessage("success", "Registered successfully");
+    displayMessage("success", "Do you feel good about yourself? You should!");
 
     // set new submission
     localStorage.setItem("user", JSON.stringify(user));
