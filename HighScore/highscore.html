@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="./style.css" />
+    
+    <title>High Score!</title>
+  </head>
+
+  
+  <body>
+   
+    <header>Go Ahead and Brag About It!</header>
+      <div class="card">
+        <h2></h2>
+        <form method="POST">
+          <div class="input-group">
+            <label for="first-name">First Name</label>
+            <input type="text" name="first-name" id="first-name" placeholder="Jane" />
+          </div>
+          <div class="input-group">
+            <label for="last-name">Last Name</label>
+            <input type="text" name="last-name" id="last-name" placeholder="Doe" />
+          </div>
+                    <div class="input-group">
+            <label for="highscore">High Score</label>
+            <input type="highscore" name="highscore" id="highscore" placeholder="200" />
+          </div>
+          <div id="msg"></div>
+          <button id="quizbutton">BOOM!</button>
+        </form>
+      </div>
+
+      <div class="card">
+        <h2>High Scores!</h2>
+        <p><strong>First Name:</strong> <span id="user-first-name"></span></p>
+        <p><strong>Last Name:</strong> <span id="user-last-name"></span></p>
+         <p><strong>High Score:</strong> <span id="user-highscore"></span></p>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
