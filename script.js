@@ -221,12 +221,12 @@ function playGame() {
   showQuestion(quizDataList);
 }
 
-// If then for keeping and saving score to High Score Page
-function getScore() {}
+
 
 // Function to End Game
 function endGame() {
   ansMsgText.textContent = "DONE! ";
+  window.location = "./HighScore/highscore.html";
 }
 
 // Set Time-Keeping Variables, Button, Display

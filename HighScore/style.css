@@ -45,12 +45,15 @@ button {
 }
 
 button:hover {
-  background-color: #0288d1;
+  background-color: #f9fcfd;
+  color: crimson;
+  font-weight: bolder;
 }
 
 .input-group {
   margin-top: 10px;
   margin-bottom: 10px;
+  font-size: 2em;
 }
 
 label {
@@ -123,8 +126,15 @@ input:hover {
   visibility: visible;
 }
 
+#user-initials,
+ #user-highscore {
+  color: #fdfffd;
+  font-size: 2em;
+}
+
 #msg.success {
-  color: #52b155;
+  color: #fdfffd;
+  font-size: larger;
 }
 
 #msg.error {

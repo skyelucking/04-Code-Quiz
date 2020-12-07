@@ -1,10 +1,10 @@
-var firstNameInput = document.querySelector("#first-name");
+var initialsInput = document.querySelector("#initials");
 var lastNameInput = document.querySelector("#last-name");
 var emailInput = document.querySelector("#email");
 var highscoreInput = document.querySelector("#highscore");
 var signUpButton = document.querySelector("#sign-up");
 var msgDiv = document.querySelector("#msg");
-var userFirstNameSpan = document.querySelector("#user-first-name");
+var userinitialsSpan = document.querySelector("#user-initials");
 var userLastNameSpan = document.querySelector("#user-last-name");
 var userEmailSpan = document.querySelector("#user-email");
 var userhighscoreSpan = document.querySelector("#user-highscore");
@@ -19,15 +19,14 @@ quizbutton.addEventListener("click", function(event) {
   
   // create user object from submission
   var user = {
-    firstName: firstNameInput.value.trim(),
-    lastName: lastNameInput.value.trim(),
+    initials: initialsInput.value.trim(),
     highscore: highscoreInput.value.trim()
   };
 
   console.log(user);
   
   // validate the fields
-  if (user.firstName === "") {
+  if (user.initials === "") {
     displayMessage("error", "First name cannot be blank");
   } else if (user.lastName === "") {
     displayMessage("error", "Last name cannot be blank");
@@ -41,8 +40,7 @@ quizbutton.addEventListener("click", function(event) {
     
     // get most recent submission
     var lastUser = JSON.parse(localStorage.getItem("user"));
-    userFirstNameSpan.textContent = lastUser.firstName;
-    userLastNameSpan.textContent = lastUser.lastName;
+    userinitialsSpan.textContent = lastUser.initials;
     userhighscoreSpan.textContent = lastUser.highscore;
   }
 });
