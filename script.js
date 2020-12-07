@@ -7,9 +7,10 @@ var ansText3 = document.getElementById("quizA3");
 var ansText4 = document.getElementById("quizA4");
 var leadText = document.getElementById("lead");
 var quizIntroText = document.getElementById("quizIntro");
+var ansChoice = "";
 
 // Quiz Scorekeeping Mechanism
-var correctAns = ["JS", "December 4, 1995", "JS", "Oracle", "jQuery", "This is the correct answer. You're welcome!" ]
+
 var quizScore = 0;
 var quizName = "Quiz T. Aker";
 var highScores = [];
@@ -22,48 +23,54 @@ var quizDataList = [
     answerA: "jvscpt ",
     answerB: "JS",
     answerC: "avaj",
-    answerD: "beanjuice"
+    answerD: "beanjuice",
+    correct: "JS"
   },
   {
     question: "When did JavaScript first appear on the scene?",
     answerA: "September 7, 1985 ",
     answerB: "December 4, 1995",
     answerC: "September 20, 1978",
-    answerD: "July 24, 2002"
+    answerD: "July 24, 2002",
+    correct: "December 4, 1995"
   },
   {
-    question: "How is JavaScript often abbreviated?",
-    answerA: "jvscpt ",
-    answerB: "JS",
-    answerC: "avaj",
-    answerD: "beanjuice"
+    question: "What is the file extension for javascript?",
+    answerA: ".css",
+    answerB: ".js",
+    answerC: ".jst",
+    answerD: ".htjs",
+    correct: ".js"
   },
   {
-    question: "THe software is a trademark of...",
+    question: "The software is a trademark of...",
     answerA: "Google ",
     answerB: "Apple",
     answerC: "Microsoft",
-    answerD: "Oracle"
+    answerD: "Oracle Corporation",
+    correct: "Oracle Corporation"
   },
   {
     question: "To date the most popular JavaScript library is...",
     answerA: "Backbone ",
     answerB: "jQuery",
     answerC: "Vue",
-    answerD: "Ajax"
+    answerD: "Ajax",
+    correct: "jQuery"
   },
   {
     question: "Do you think Nick Cage uses Java? The code OR the coffee?",
     answerA: "For shizzle",
     answerB: "This is the correct answer. You're welcome!",
     answerC: "You know he chugs that java while coding to save the planet.",
-    answerD: "NO. Just..NO."
+    answerD: "NO. Just..NO.",
+    correct: "This is the correct answer. You're welcome!"
   },
 ];
 
 // Render Quiz Question Data
 function showQuestion(quizDataList) {
-  console.log(quizDataList)
+  // console.log(quizDataList)
   console.log("Question Index: " , questionIndex)
   quizQuestionText.textContent = quizDataList[questionIndex].question;
   ansText1.textContent = quizDataList[questionIndex].answerA;
@@ -74,15 +81,63 @@ function showQuestion(quizDataList) {
   ansText3.previousSibling.dataset["answer"]= quizDataList[questionIndex].answerC;
   ansText4.textContent = quizDataList[questionIndex].answerD;
   ansText4.previousSibling.dataset["answer"]= quizDataList[questionIndex].answerD;
+  var ansCorrect = quizDataList[questionIndex].correct;
+  console.log("This is the right answer: ", ansCorrect);
+  return ansCorrect;
 }
-  
+
+
 function initializeGame(){
+  // Loop for Correct Answer Check 
   ansText1.previousSibling.addEventListener("click", function(e){
     e.preventDefault();
     var button = e.target;
-    console.log(button.dataset["answer"]);
+    console.log("button pressed:", button.dataset["answer"]);
+    if (button.dataset["answer"] == showQuestion(quizDataList)){
+      console.log("Correct! The answer is " 
+      + showQuestion(quizDataList));
+   } else
+      console.log("Nope. The correct answer was:" + showQuestion(quizDataList) );
+      totalSeconds = totalSeconds - 10;
+      questionIndex = questionIndex + 1;
+      console.log(questionIndex);
+      showQuestion(quizDataList);
+      
+           
   })
-
+  ansText2.previousSibling.addEventListener("click", function(e){
+    e.preventDefault();
+    var button = e.target;
+    console.log("button pressed:", button.dataset["answer"]);
+    if (button.dataset["answer"] == showQuestion(quizDataList)){
+      console.log("Correct! The answer is " 
+      + showQuestion(quizDataList));
+   } else
+      console.log("Nope. The correct answer was:" + showQuestion(quizDataList) );
+      
+  })
+  ansText3.previousSibling.addEventListener("click", function(e){
+    e.preventDefault();
+    var button = e.target;
+    console.log("button pressed:", button.dataset["answer"]);
+    if (button.dataset["answer"] == showQuestion(quizDataList)){
+      console.log("Correct! The answer is " 
+      + showQuestion(quizDataList));
+   } else
+      console.log("Nope. The correct answer was:" + showQuestion(quizDataList) );
+      
+  })
+  ansText4.previousSibling.addEventListener("click", function(e){
+    e.preventDefault();
+    var button = e.target;
+    console.log("button pressed:", button.dataset["answer"]);
+    if (button.dataset["answer"] == showQuestion(quizDataList)){
+      console.log("Correct! The answer is " 
+      + showQuestion(quizDataList));
+   } else
+      console.log("Nope. The correct answer was:" + showQuestion(quizDataList) );
+  }); 
+  
 }
 
 function playGame() {
@@ -125,7 +180,7 @@ function startTimer() {
 }
 
 function setTime() {
-  totalSeconds = 4;
+  totalSeconds = 20;
 }
 
 function renderTime() {
