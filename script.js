@@ -6,6 +6,8 @@ var ansText2 = document.getElementById("quizA2");
 var ansText3 = document.getElementById("quizA3");
 var ansText4 = document.getElementById("quizA4");
 var leadText = document.getElementById("lead");
+var ansMsgText = document.getElementById("ansMsg");
+var scoreText = document.getElementById("score");
 var quizIntroText = document.getElementById("quizIntro");
 var ansChoice = "";
 
@@ -24,7 +26,7 @@ var quizDataList = [
     answerB: "JS",
     answerC: "avaj",
     answerD: "beanjuice",
-    correct: "JS"
+    correct: "JS",
   },
   {
     question: "When did JavaScript first appear on the scene?",
@@ -32,7 +34,7 @@ var quizDataList = [
     answerB: "December 4, 1995",
     answerC: "September 20, 1978",
     answerD: "July 24, 2002",
-    correct: "December 4, 1995"
+    correct: "December 4, 1995",
   },
   {
     question: "What is the file extension for javascript?",
@@ -40,7 +42,7 @@ var quizDataList = [
     answerB: ".js",
     answerC: ".jst",
     answerD: ".htjs",
-    correct: ".js"
+    correct: ".js",
   },
   {
     question: "The software is a trademark of...",
@@ -48,7 +50,7 @@ var quizDataList = [
     answerB: "Apple",
     answerC: "Microsoft",
     answerD: "Oracle Corporation",
-    correct: "Oracle Corporation"
+    correct: "Oracle Corporation",
   },
   {
     question: "To date the most popular JavaScript library is...",
@@ -56,7 +58,7 @@ var quizDataList = [
     answerB: "jQuery",
     answerC: "Vue",
     answerD: "Ajax",
-    correct: "jQuery"
+    correct: "jQuery",
   },
   {
     question: "Do you think Nick Cage uses Java? The code OR the coffee?",
@@ -64,95 +66,167 @@ var quizDataList = [
     answerB: "This is the correct answer. You're welcome!",
     answerC: "You know he chugs that java while coding to save the planet.",
     answerD: "NO. Just..NO.",
-    correct: "This is the correct answer. You're welcome!"
+    correct: "This is the correct answer. You're welcome!",
   },
 ];
 
 // Render Quiz Question Data
 function showQuestion(quizDataList) {
-  // console.log(quizDataList)
-  console.log("Question Index: " , questionIndex)
+  if (questionIndex < 6 && getFormattedSeconds() > 0){
   quizQuestionText.textContent = quizDataList[questionIndex].question;
   ansText1.textContent = quizDataList[questionIndex].answerA;
-  ansText1.previousSibling.dataset["answer"]= quizDataList[questionIndex].answerA;
+  ansText1.previousSibling.dataset["answer"] =
+    quizDataList[questionIndex].answerA;
   ansText2.textContent = quizDataList[questionIndex].answerB;
-  ansText2.previousSibling.dataset["answer"]= quizDataList[questionIndex].answerB;
+  ansText2.previousSibling.dataset["answer"] =
+    quizDataList[questionIndex].answerB;
   ansText3.textContent = quizDataList[questionIndex].answerC;
-  ansText3.previousSibling.dataset["answer"]= quizDataList[questionIndex].answerC;
+  ansText3.previousSibling.dataset["answer"] =
+    quizDataList[questionIndex].answerC;
   ansText4.textContent = quizDataList[questionIndex].answerD;
-  ansText4.previousSibling.dataset["answer"]= quizDataList[questionIndex].answerD;
+  ansText4.previousSibling.dataset["answer"] =
+    quizDataList[questionIndex].answerD;
   var ansCorrect = quizDataList[questionIndex].correct;
-  console.log("This is the right answer: ", ansCorrect);
+  
+} else {
+  endGame();
+}
   return ansCorrect;
 }
 
-
-function initializeGame(){
-  // Loop for Correct Answer Check 
-  ansText1.previousSibling.addEventListener("click", function(e){
+function initializeGame() {
+  // Loop for  Answer Check
+  ansText1.previousSibling.addEventListener("click", function (e) {
     e.preventDefault();
     var button = e.target;
     console.log("button pressed:", button.dataset["answer"]);
-    if (button.dataset["answer"] == showQuestion(quizDataList)){
-      console.log("Correct! The answer is " 
-      + showQuestion(quizDataList));
-   } else
-      console.log("Nope. The correct answer was:" + showQuestion(quizDataList) );
+    ansChoice = button.dataset["answer"];
+    console.log("They chose: ", ansChoice);
+    if (ansChoice == showQuestion(quizDataList)) {
+      ansMsgText.textContent =
+        "Correct! The answer is " + showQuestion(quizDataList);
+      quizScore = quizScore + 100;
+      scoreText.textContent = "Score: " + quizScore;
+      // questionIndex = questionIndex + 1;
+      console.log(questionIndex)
+    showQuestion(quizDataList);
+    } else {
+      ansMsgText.textContent =
+        "Nope! The answer is " + showQuestion(quizDataList);
+      console.log("Nope. The correct answer was:" + showQuestion(quizDataList));
       totalSeconds = totalSeconds - 10;
-      questionIndex = questionIndex + 1;
-      console.log(questionIndex);
+      // questionIndex = questionIndex + 1;
+      console.log("Question Index: ", questionIndex);
+    } 
+    questionIndex = questionIndex + 1;
+    console.log(questionIndex)
+    showQuestion(quizDataList);
+  });
+
+  ansText2.previousSibling.addEventListener("click", function (e) {
+    e.preventDefault();
+    var button = e.target;
+    console.log("button pressed:", button.dataset["answer"]);
+    ansChoice = button.dataset["answer"];
+    console.log("They chose: ", ansChoice);
+    if (ansChoice == showQuestion(quizDataList)) {
+      ansMsgText.textContent =
+        "Correct! The answer is " + showQuestion(quizDataList);
+      quizScore = quizScore + 100;
+      scoreText.textContent = "Score: " + quizScore;
+      // questionIndex = questionIndex + 1;
+      console.log(questionIndex)
+    showQuestion(quizDataList);
+    } else {
+      ansMsgText.textContent =
+        "Nope! The answer is " + showQuestion(quizDataList);
+      console.log("Nope. The correct answer was:" + showQuestion(quizDataList));
+      totalSeconds = totalSeconds - 10;
+      // questionIndex = questionIndex + 1;
+      console.log("Question Index: ", questionIndex);
+    } 
+    questionIndex = questionIndex + 1;
+    console.log(questionIndex)
+    showQuestion(quizDataList);
+  });
+
+  ansText3.previousSibling.addEventListener("click", function (e) {
+    e.preventDefault();
+    var button = e.target;
+    console.log("button pressed:", button.dataset["answer"]);
+    ansChoice = button.dataset["answer"];
+    console.log("They chose: ", ansChoice);
+    if (ansChoice == showQuestion(quizDataList)) {
+      ansMsgText.textContent =
+        "Correct! The answer is " + showQuestion(quizDataList);
+      quizScore = quizScore + 100;
+      scoreText.textContent = "Score: " + quizScore;
+      // questionIndex = questionIndex + 1;
+      console.log(questionIndex)
       showQuestion(quizDataList);
-      
-           
-  })
-  ansText2.previousSibling.addEventListener("click", function(e){
+    } else {
+      ansMsgText.textContent =
+        "Nope! The answer is " + showQuestion(quizDataList);
+      console.log("Nope. The correct answer was:" + showQuestion(quizDataList));
+      totalSeconds = totalSeconds - 10;
+      // questionIndex = questionIndex + 1;
+      console.log("Question Index: ", questionIndex);
+    } 
+    questionIndex = questionIndex + 1;
+    console.log(questionIndex)
+    showQuestion(quizDataList);
+  });
+  ansText4.previousSibling.addEventListener("click", function (e) {
     e.preventDefault();
     var button = e.target;
     console.log("button pressed:", button.dataset["answer"]);
-    if (button.dataset["answer"] == showQuestion(quizDataList)){
-      console.log("Correct! The answer is " 
-      + showQuestion(quizDataList));
-   } else
-      console.log("Nope. The correct answer was:" + showQuestion(quizDataList) );
-      
-  })
-  ansText3.previousSibling.addEventListener("click", function(e){
-    e.preventDefault();
-    var button = e.target;
-    console.log("button pressed:", button.dataset["answer"]);
-    if (button.dataset["answer"] == showQuestion(quizDataList)){
-      console.log("Correct! The answer is " 
-      + showQuestion(quizDataList));
-   } else
-      console.log("Nope. The correct answer was:" + showQuestion(quizDataList) );
-      
-  })
-  ansText4.previousSibling.addEventListener("click", function(e){
-    e.preventDefault();
-    var button = e.target;
-    console.log("button pressed:", button.dataset["answer"]);
-    if (button.dataset["answer"] == showQuestion(quizDataList)){
-      console.log("Correct! The answer is " 
-      + showQuestion(quizDataList));
-   } else
-      console.log("Nope. The correct answer was:" + showQuestion(quizDataList) );
-  }); 
-  
+    ansChoice = button.dataset["answer"];
+    console.log("They chose: ", ansChoice);
+    if (ansChoice == showQuestion(quizDataList)) {
+      ansMsgText.textContent =
+        "Correct! The answer is " + showQuestion(quizDataList);
+      quizScore = quizScore + 100;
+      scoreText.textContent = "Score: " + quizScore;
+      // questionIndex = questionIndex + 1;
+      console.log(questionIndex)
+      showQuestion(quizDataList);
+    } else {
+      ansMsgText.textContent =
+        "Nope! The answer is " + showQuestion(quizDataList);
+      console.log("Nope. The correct answer was:" + showQuestion(quizDataList));
+      totalSeconds = totalSeconds - 10;
+      // questionIndex = questionIndex + 1;
+      console.log("Question Index: ", questionIndex);
+    } 
+    questionIndex = questionIndex + 1;
+    console.log(questionIndex)
+    showQuestion(quizDataList);
+  });
 }
 
+// function nextQuestion (){
+//   console.log("Index: " , questionIndex);
+//   console.log("Score:" , quizScore);
+//   scoreText.textContent = ("Score: " + quizScore);
+//   if (totalSeconds > 0) {
+//   questionIndex = questionIndex + 1;
+//   showQuestion(quizDataList);
+//   initializeGame();
+// } else
+//   endGame();
+// }
+
 function playGame() {
- startTimer();
- showQuestion(quizDataList);
+  startTimer();
+  showQuestion(quizDataList);
 }
 
 // If then for keeping and saving score to High Score Page
-function getScore() {
-
-}
+function getScore() {}
 
 // Function to End Game
-function endGame(){
-
+function endGame() {
+  ansMsgText.textContent = "DONE! ";
 }
 
 // Set Time-Keeping Variables, Button, Display
@@ -172,15 +246,15 @@ function startTimer() {
     interval = setInterval(function () {
       secondsElapsed++;
       renderTime();
-      if (totalSeconds - secondsElapsed <= 0){
+      if (totalSeconds - secondsElapsed <= 0) {
         clearInterval(interval);
       }
     }, 1000);
-    }
+  }
 }
 
 function setTime() {
-  totalSeconds = 20;
+  totalSeconds = 60;
 }
 
 function renderTime() {

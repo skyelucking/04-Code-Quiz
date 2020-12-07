@@ -71,9 +71,14 @@ h1 {
    position: relative;
 }
 
+#score {
+  font-size: 3em;
+  float: inherit;
+  color: crimson;
+}
 
 #seconds {
-    font-size: 6em;
+    font-size: 3em;
     float: inherit;
     color: crimson;
   }
@@ -105,5 +110,12 @@ h1 {
     text-align: center;
   }
 
-
+  #ansMsg  {
+    padding-top: 10px;
+    font-size: 1.5em;
+    font-weight: bolder;
+    text-align: center;
+    color: rgb(3, 3, 3);
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  }
   
