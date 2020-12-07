@@ -9,9 +9,10 @@ var userLastNameSpan = document.querySelector("#user-last-name");
 var userEmailSpan = document.querySelector("#user-email");
 var userhighscoreSpan = document.querySelector("#user-highscore");
 
+
 clearbutton.addEventListener("click", function(event) {
   localStorage.clear(user);
-  event.preventDefault();
+ event.preventDefault();
   });
 
 function displayMessage(type, message) {
@@ -21,7 +22,7 @@ function displayMessage(type, message) {
 
 
 quizbutton.addEventListener("click", function(event) {
-  event.preventDefault();
+event.preventDefault(); 
 
   
   
