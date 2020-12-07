@@ -15,7 +15,6 @@ var ansChoice = "";
 
 var quizScore = 0;
 var quizName = "Quiz T. Aker";
-var highScores = [];
 var questionIndex = 0;
 
 // Set Quiz Question Data
@@ -221,11 +220,16 @@ function playGame() {
   showQuestion(quizDataList);
 }
 
+// create user object from submission
 
 
 // Function to End Game
 function endGame() {
   ansMsgText.textContent = "DONE! ";
+  // var user = {
+  //   highscore: quizScore,
+  // };
+  // console.log(user);
   window.location = "./HighScore/highscore.html";
 }
 

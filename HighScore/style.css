@@ -31,11 +31,11 @@ button {
   border-radius: 8px;
   color: #black;
   cursor: pointer;
-  font-size: 3em;
+  font-size: 2em;
   letter-spacing: 0.21px;
   line-height: 16px;
   max-width: 255px;
-  padding: 20px 52px;
+  padding: 20px 32px;
   text-align: center;
   transition-duration: 0.15s;
   transition-property: background-color;
