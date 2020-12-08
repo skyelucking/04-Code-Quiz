@@ -1,9 +1,10 @@
-# Skye Lucking - 03 JavaScript Password Generator (Using the Class Example)
+# Skye Lucking - 04 CAGE MATCH - JAVASCRIPT CODE QUIZ!
 
 <h1>Description of application</h1>
 This is a fun "CAGE MATCH - JAVASCRIPT CODE QUIZ" it:
 - Instructs the user that they will answer questions, be scored, and lose time if they have an incorrect answer. 
 - Adds 100 points to the score for every correct answer
+- Adds an increasingly agitated Nicolas Cage with every button clicked. Don't get distracted!
 - Decreases the time by 10 seconds for every incorrect answer
 - Let's the user know if their answer was correct or incorrect and tells them what the right answer is
 - Records their scores in local storage and then passes them to the High Score page after 3 seconds
