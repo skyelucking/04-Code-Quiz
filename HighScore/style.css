@@ -140,3 +140,11 @@ input:hover {
 #msg.error {
   color: #e6252c;
 }
+
+.correct-cage {
+  visibility: visible;
+  position: fixed;
+  right: 300px;
+  top: 0px;
+  z-index: 2;
+}
