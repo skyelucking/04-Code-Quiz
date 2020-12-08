@@ -139,15 +139,17 @@ h1 {
 
     .curious-cage {
       visibility: hidden;
-      position: absolute;
-      right: -30px;
-      bottom: 0px;
-      z-index: 1;
+      position:  fixed;
+      right: 1100px;
+      bottom: 10px;
+      z-index: -1;
     }
       .calm-cage {
+        width: 400px;
+        height: 400px;
         visibility: hidden;
-        position: absolute;
-        left: 900px;
+        position: fixed;
+        right: -50px;
         bottom: 0px;
         z-index: 1;
       }
@@ -156,8 +158,8 @@ h1 {
         width: 300px;
         height: 200px;
         visibility: hidden;
-        position: absolute;
-        left: 600px;
+        position: fixed;
+        left: 800px;
         bottom: 0px;
         z-index: 1;
       }
@@ -166,9 +168,9 @@ h1 {
         width: 300px;
         height: 300px;
         visibility: hidden;
-        position: absolute;
-        left: 300px;
-        bottom: -10px;
+        position: fixed;
+        left: 400px;
+        bottom: 0px;
         z-index: 2;
       }
 
@@ -176,8 +178,8 @@ h1 {
         width: 300px;
         height: 300px;
         visibility: hidden;
-        position: absolute;
-        left: 10px;
+        position: fixed;
+        left: 100px;
         bottom: 0px;
         z-index: 1;
       }
@@ -185,19 +187,19 @@ h1 {
         width: 300px;
         height: 300px; 
         visibility: hidden;
-        position: absolute;
-        left: 50px;
-        top: -10px;
+        position: fixed;
+        left: 20px;
+        top: 0px;
         z-index: 1;
       }
       .end-cage1 {
         width: 400px;
         height: 400px; 
         visibility: hidden;
-        position: absolute;
-        left: 50px;
-        top: -10px;
-        z-index: 1;
+        position: fixed;
+        left: 20px;
+        top: 0px;
+        z-index: -1;
       }
 
       #endCages
