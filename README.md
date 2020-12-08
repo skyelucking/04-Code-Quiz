@@ -2,14 +2,17 @@
 
 <h1>Description of application</h1>
 This is a fun "CAGE MATCH - JAVASCRIPT CODE QUIZ" it:
-- Instructs the user that they will answer questions, be scored, and lose time if they have an incorrect answer. 
-- Adds 100 points to the score for every correct answer
-- Adds an increasingly agitated Nicolas Cage with every button clicked. Don't get distracted!
-- Decreases the time by 10 seconds for every incorrect answer
-- Let's the user know if their answer was correct or incorrect and tells them what the right answer is
-- Records their scores in local storage and then passes them to the High Score page after 3 seconds
-- When at the High Scores page the user can enter their initials, which goes into local storage and then also clear their scores.
-- Also - there's lots of actor Nicola Cage - hence "Cage Match"!
+<ul>
+
+<li>Instructs the user that they will answer questions, be scored, and lose time if they have an incorrect answer. </li>
+<li> Adds 100 points to the score for every correct answer</li>
+<li>Adds an increasingly agitated Nicolas Cage with every button clicked. Don't get distracted!</li>
+<li>Decreases the time by 10 seconds for every incorrect answer</li>
+<li> Let's the user know if their answer was correct or incorrect and tells them what the right answer is</li>
+<li>Records their scores in local storage and then passes them to the High Score page after 3 seconds</li>
+<li>When at the High Scores page the user can enter their initials, which goes into local storage and then also clear their scores.</li>
+<li> Also - there's lots of actor Nicola Cage - hence "Cage Match"!</li>
+</ul>
 
 <h1>Screenshot</h1>
 <img src="Assets/SS1.png"><br>
