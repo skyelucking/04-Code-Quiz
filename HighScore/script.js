@@ -2,21 +2,24 @@ var initialsInput = document.querySelector("#initials");
 var lastNameInput = document.querySelector("#last-name");
 var emailInput = document.querySelector("#email");
 var highscoreInput = document.querySelector("#highscore");
+var hsPlaceHolder = document.querySelector("#highscorePlaceHolder");
 var signUpButton = document.querySelector("#sign-up");
 var msgDiv = document.querySelector("#msg");
 var userinitialsSpan = document.querySelector("#user-initials");
 var userLastNameSpan = document.querySelector("#user-last-name");
 var userEmailSpan = document.querySelector("#user-email");
 var userhighscoreSpan = document.querySelector("#user-highscore");
+// var scores = JSON.parse(localStorage.getItem("scoreInfo"));
+var scoreInfo = localStorage.getItem('scoreInfo');
+document.getElementById("highscore").placeholder = localStorage.getItem('scoreInfo');
 
+console.log(scoreInfo);
 clearbutton.addEventListener("click", function(event) {
   event.preventDefault();
   localStorage.clear();
+  userinitialsSpan.textContent = "";
+    userhighscoreSpan.textContent = "";
 });
-
-
- 
-
 
 function displayMessage(type, message) {
   msgDiv.textContent = message;
@@ -26,10 +29,7 @@ function displayMessage(type, message) {
 
 quizbutton.addEventListener("click", function(event) {
 event.preventDefault(); 
-
-  
-  
-  
+ 
   // create user object from submission
   var user = {
     initials: initialsInput.value.trim(),
@@ -57,5 +57,3 @@ event.preventDefault();
     userhighscoreSpan.textContent = lastUser.highscore;
   }
 });
-
-

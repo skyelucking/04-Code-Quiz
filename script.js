@@ -237,15 +237,6 @@ function playGame() {
 // create user object from submission
 
 
-// Function to End Game
-function endGame() {
-  ansMsgText.textContent = "DONE! Your Score is " + quizScore;
-  window.setTimeout(function(){
-    // Move to a new location or you can do something else
-    window.location.href = "./HighScore/highscore.html";
-}, 3000);
-
-  }
 
 // Set Time-Keeping Variables, Button, Display
 var playButton = document.querySelector("#play");
@@ -292,6 +283,22 @@ function getFormattedSeconds() {
   return formattedSeconds;
 }
 
+var scoreInfo = {
+    highscore: quizScore,
+ };
+ // Function to End Game
+ function endGame() {
+   console.log(quizScore)
+   ansMsgText.textContent = "DONE! Your Score is " + quizScore;
+  
+   localStorage.setItem("scoreInfo", JSON.stringify(quizScore));
+   
+   window.setTimeout(function(){
+     // Move to a new location or you can do something else
+     window.location.href = "./HighScore/highscore.html";
+ }, 3000);
+ 
+   }
 
 
 initializeGame();

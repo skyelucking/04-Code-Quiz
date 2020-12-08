@@ -16,6 +16,7 @@ h2 {
   margin: 0px;
   margin-top: 0.45em;
   margin-bottom: 0em;
+  text-align: center;
 }
 header {
   text-align: center;
@@ -93,7 +94,7 @@ input:hover {
   margin: 2%;
   margin-top: 10px;
   padding: 20px;
-  width: 50%;
+  width: 90%;
   overflow: hidden;
   position: inherit;
   float: center;
@@ -160,7 +161,7 @@ input:hover {
 .correct-cage {
   visibility: visible;
   position: relative;
-  align-content: center;
+  align-content: left;
   /* right: 300px;
   top: 0px; */
   z-index: 2;
