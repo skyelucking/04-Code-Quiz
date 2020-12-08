@@ -171,7 +171,7 @@ h1 {
         height: 200px;
         visibility: hidden;
         position: fixed;
-        left: 600px;
+        left: 300px;
         top: 10px;
         z-index: 2;
       }
@@ -181,7 +181,7 @@ h1 {
         height: 200px;
         visibility: hidden;
         position: fixed;
-        left: 800px;
+        left: 170px;
         top: 0px;
         z-index: 1;
       }
@@ -190,7 +190,7 @@ h1 {
         height: 200px; 
         visibility: hidden;
         position: fixed;
-        left: 450px;
+        left: 50px;
         top: 0px;
         z-index: 1;
       }
