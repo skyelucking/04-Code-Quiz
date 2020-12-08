@@ -138,19 +138,21 @@ h1 {
   } */ 
 
     .curious-cage {
+      width: 200px;
+        height: 200px;
       visibility: hidden;
       position:  fixed;
-      right: 1100px;
-      bottom: 10px;
-      z-index: -1;
+      right: 500px;
+      top: 15px;
+      z-index: 1;
     }
       .calm-cage {
-        width: 400px;
-        height: 400px;
+        width: 250px;
+        height: 250px;
         visibility: hidden;
         position: fixed;
-        right: -50px;
-        bottom: 0px;
+        right: 650px;
+        top: -40px;
         z-index: 1;
       }
 
@@ -159,45 +161,45 @@ h1 {
         height: 200px;
         visibility: hidden;
         position: fixed;
-        left: 800px;
-        bottom: 0px;
+        left: 1000px;
+        top: 0px;
         z-index: 1;
       }
 
       .sweaty-cage {
-        width: 300px;
-        height: 300px;
+        width: 200px;
+        height: 200px;
         visibility: hidden;
         position: fixed;
-        left: 400px;
-        bottom: 0px;
+        left: 600px;
+        top: 10px;
         z-index: 2;
       }
 
       .toothy-cage {
-        width: 300px;
-        height: 300px;
+        width: 200px;
+        height: 200px;
         visibility: hidden;
         position: fixed;
-        left: 100px;
-        bottom: 0px;
+        left: 800px;
+        top: 0px;
         z-index: 1;
       }
       .upside-cage {
-        width: 300px;
-        height: 300px; 
+        width: 200px;
+        height: 200px; 
         visibility: hidden;
         position: fixed;
-        left: 20px;
+        left: 450px;
         top: 0px;
         z-index: 1;
       }
       .end-cage1 {
-        width: 400px;
-        height: 400px; 
+        width: 200px;
+        height: 200px; 
         visibility: hidden;
         position: fixed;
-        left: 20px;
+        left: 200px;
         top: 0px;
         z-index: -1;
       }
