@@ -9,11 +9,14 @@ var userLastNameSpan = document.querySelector("#user-last-name");
 var userEmailSpan = document.querySelector("#user-email");
 var userhighscoreSpan = document.querySelector("#user-highscore");
 
-
 clearbutton.addEventListener("click", function(event) {
-  localStorage.clear(user);
- event.preventDefault();
-  });
+  event.preventDefault();
+  localStorage.clear();
+});
+
+
+ 
+
 
 function displayMessage(type, message) {
   msgDiv.textContent = message;
@@ -54,6 +57,5 @@ event.preventDefault();
     userhighscoreSpan.textContent = lastUser.highscore;
   }
 });
-
 
 

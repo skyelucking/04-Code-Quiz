@@ -1,6 +1,7 @@
 // Quiz Body Elements
 var siteButton = document.getElementById("#site");
 var quizQuestionText = document.getElementById("quizQuestion");
+var cageFaceImg = document.getElementById("cageFace");
 var ansText1 = document.getElementById("quizA1");
 var ansText2 = document.getElementById("quizA2");
 var ansText3 = document.getElementById("quizA3");
@@ -10,6 +11,8 @@ var ansMsgText = document.getElementById("ansMsg");
 var scoreText = document.getElementById("score");
 var quizIntroText = document.getElementById("quizIntro");
 var ansChoice = "";
+var endCages = document.getElementById("score");
+
 
 // Quiz Scorekeeping Mechanism
 
@@ -26,6 +29,9 @@ var quizDataList = [
     answerC: "avaj",
     answerD: "beanjuice",
     correct: "JS",
+    image: ".calm-cage"
+    
+    
   },
   {
     question: "When did JavaScript first appear on the scene?",
@@ -34,6 +40,8 @@ var quizDataList = [
     answerC: "September 20, 1978",
     answerD: "July 24, 2002",
     correct: "December 4, 1995",
+    image: ".curious-cage"
+   
   },
   {
     question: "What is the file extension for javascript?",
@@ -42,6 +50,7 @@ var quizDataList = [
     answerC: ".jst",
     answerD: ".htjs",
     correct: ".js",
+    image: ".proud-cage"
   },
   {
     question: "The software is a trademark of...",
@@ -50,6 +59,8 @@ var quizDataList = [
     answerC: "Microsoft",
     answerD: "Oracle Corporation",
     correct: "Oracle Corporation",
+    image: ".sweaty-cage"
+   
   },
   {
     question: "To date the most popular JavaScript library is...",
@@ -58,6 +69,8 @@ var quizDataList = [
     answerC: "Vue",
     answerD: "Ajax",
     correct: "jQuery",
+    image: ".toothy-cage"
+   
   },
   {
     question: "Do you think Nick Cage uses Java? The code OR the coffee?",
@@ -66,12 +79,17 @@ var quizDataList = [
     answerC: "You know he chugs that java while coding to save the planet.",
     answerD: "NO. Just..NO.",
     correct: "This is the correct answer. You're welcome!",
+    image: ".upside-cage"
+    
   },
 ];
+
+
 
 // Render Quiz Question Data
 function showQuestion(quizDataList) {
   if (questionIndex < 6 && getFormattedSeconds() > 0){
+      
   quizQuestionText.textContent = quizDataList[questionIndex].question;
   ansText1.textContent = quizDataList[questionIndex].answerA;
   ansText1.previousSibling.dataset["answer"] =
@@ -86,6 +104,9 @@ function showQuestion(quizDataList) {
   ansText4.previousSibling.dataset["answer"] =
     quizDataList[questionIndex].answerD;
   var ansCorrect = quizDataList[questionIndex].correct;
+  
+  document.querySelector(quizDataList[questionIndex].image).style.visibility = "visible";
+    
   
 } else {
   endGame();
@@ -103,9 +124,10 @@ function initializeGame() {
     console.log("They chose: ", ansChoice);
     if (ansChoice == showQuestion(quizDataList)) {
       ansMsgText.textContent =
-        "Correct! The answer is " + showQuestion(quizDataList);
+        "Correct! The answer is " + showQuestion(quizDataList) + curiousCage;
       quizScore = quizScore + 100;
       scoreText.textContent = "Score: " + quizScore;
+     setTimeout();
       // questionIndex = questionIndex + 1;
       console.log(questionIndex)
     showQuestion(quizDataList);
@@ -133,6 +155,7 @@ function initializeGame() {
         "Correct! The answer is " + showQuestion(quizDataList);
       quizScore = quizScore + 100;
       scoreText.textContent = "Score: " + quizScore;
+      
       // questionIndex = questionIndex + 1;
       console.log(questionIndex)
     showQuestion(quizDataList);
@@ -201,23 +224,14 @@ function initializeGame() {
     console.log(questionIndex)
     showQuestion(quizDataList);
   });
-}
+};
 
-// function nextQuestion (){
-//   console.log("Index: " , questionIndex);
-//   console.log("Score:" , quizScore);
-//   scoreText.textContent = ("Score: " + quizScore);
-//   if (totalSeconds > 0) {
-//   questionIndex = questionIndex + 1;
-//   showQuestion(quizDataList);
-//   initializeGame();
-// } else
-//   endGame();
-// }
+
 
 function playGame() {
   startTimer();
   showQuestion(quizDataList);
+  
 }
 
 // create user object from submission
@@ -225,13 +239,13 @@ function playGame() {
 
 // Function to End Game
 function endGame() {
-  ansMsgText.textContent = "DONE! ";
-  // var user = {
-  //   highscore: quizScore,
-  // };
-  // console.log(user);
-  window.location = "./HighScore/highscore.html";
-}
+  ansMsgText.textContent = "DONE! Your Score is " + quizScore;
+  window.setTimeout(function(){
+    // Move to a new location or you can do something else
+    window.location.href = "./HighScore/highscore.html";
+}, 3000);
+
+  }
 
 // Set Time-Keeping Variables, Button, Display
 var playButton = document.querySelector("#play");
@@ -277,5 +291,7 @@ function getFormattedSeconds() {
   }
   return formattedSeconds;
 }
+
+
 
 initializeGame();

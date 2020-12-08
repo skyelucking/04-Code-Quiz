@@ -119,3 +119,88 @@ h1 {
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
   }
   
+  /* .calm-cage {
+    visibility: hidden;
+    position: fixed;
+    bottom: -50px;
+    /* top: 10px; */
+    /* left: 50px;
+    width: 200px;
+    height: 200px;
+    background-image: url("../Assets/calm-cage.png");
+    padding: 20px;
+    color: #fff; */
+    /* border: 0px solid #444;
+    border-left: 1px solid #444;
+    border-right: 1px solid #111;
+    border-bottom: 1px solid #111; */
+    /* box-sizing: border-box;
+  } */ 
+
+    .curious-cage {
+      visibility: hidden;
+      position: absolute;
+      right: -30px;
+      bottom: 0px;
+      z-index: 1;
+    }
+      .calm-cage {
+        visibility: hidden;
+        position: absolute;
+        left: 900px;
+        bottom: 0px;
+        z-index: 1;
+      }
+
+      .proud-cage {
+        width: 300px;
+        height: 200px;
+        visibility: hidden;
+        position: absolute;
+        left: 600px;
+        bottom: 0px;
+        z-index: 1;
+      }
+
+      .sweaty-cage {
+        width: 300px;
+        height: 300px;
+        visibility: hidden;
+        position: absolute;
+        left: 300px;
+        bottom: -10px;
+        z-index: 2;
+      }
+
+      .toothy-cage {
+        width: 300px;
+        height: 300px;
+        visibility: hidden;
+        position: absolute;
+        left: 10px;
+        bottom: 0px;
+        z-index: 1;
+      }
+      .upside-cage {
+        width: 300px;
+        height: 300px; 
+        visibility: hidden;
+        position: absolute;
+        left: 50px;
+        top: -10px;
+        z-index: 1;
+      }
+      .end-cage1 {
+        width: 400px;
+        height: 400px; 
+        visibility: hidden;
+        position: absolute;
+        left: 50px;
+        top: -10px;
+        z-index: 1;
+      }
+
+      #endCages
+      {
+        visibility: hidden;
+      }
